@@ -20,11 +20,14 @@ agent any
      }
    }
 // input message
-   stage('input the message') {
-    steps {
-    // Archive the build output artifacts.
-     input: "kailas"
-     }
-   }
+     stages {
+        stage('input the message') {
+            steps {
+                // Requesting user input
+                script {
+                    def userInput = input(message: 'Please provide a message:', parameters: [string(defaultValue: 'kailas', description: 'Enter your message', name: 'MESSAGE')])
+                    echo "User input is: ${userInput}"
+                }
+            }
   }
 }
