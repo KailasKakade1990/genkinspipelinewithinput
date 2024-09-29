@@ -20,7 +20,7 @@ agent any
      }
    }
 // input message
-     stages {
+     
         stage('input the message') {
             steps {
                 // Requesting user input
