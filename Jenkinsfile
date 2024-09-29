@@ -19,15 +19,5 @@ agent any
      archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
      }
    }
-// input message
-     
-        stage('input the message') {
-            steps {
-                // Requesting user input
-                script {
-                    def userInput = input(message: 'Please provide a message:', parameters: [string(defaultValue: 'kailas', description: 'Enter your message', name: 'MESSAGE')])
-                    echo "User input is: ${userInput}"
-                }
-            }
   }
 }
